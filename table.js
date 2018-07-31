@@ -62,3 +62,20 @@ for(var i=0; i<= Math.sqrt(userinputnumber);i++){
 var enddate = new Date();
 var timediff = Math.abs(enddate.getMilliseconds() - startdate.getMilliseconds());
 console.log(startdate.getMilliseconds(),enddate.getMilliseconds(),timediff);
+
+console.log(eval(5*63));
+
+var startingnumber = 0;
+var firstnumber = 1;
+
+var uptonumber = 5;
+var currentnumber = 0;
+
+for(var i =0; i< uptonumber; i++){
+currentnumber = startingnumber + firstnumber;
+startingnumber = firstnumber;
+firstnumber = currentnumber;
+console.log(currentnumber);
+}
+
+console.log('Fibonacci series done------------');
