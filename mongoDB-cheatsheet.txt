@@ -1,0 +1,68 @@
+
+https://docs.mongodb.com/manual/tutorial/install-mongodb-enterprise-on-windows/
+
+
+MongoDB is a really versatile NoSQL data solution. 
+MongoDB inherently supports replication and sharding.
+ it has a flexible schema.
+  I have a user document. Now, what I've chosen to do here is to relate it to another document. This is just one option you have with MongoDB – references.
+  write operations are atomic at the document level.
+  you want to use the sub-documents method, or the relationship method. 
+  
+  
+  %mongodb% - is environment variable - points to mongo db installation path.
+  cmd.exe - run as administrator
+  cd %mongodb%
+  run mongod.exe
+  open another cmd prompt
+  run "C:\Program Files\MongoDB\Server\4.0\bin\mongo.exe"
+  mongo shell is started now.
+  -----------
+  db.getName()
+  db.getMongo()
+  show dbs
+  use mydb
+  show users
+  db.help()
+  
+  --
+  db.createCollection("test_collection")
+  show Collections
+  
+  db.test_collection.find().pretty() -- prints all contents of collection
+  
+  -------
+  
+  
+  
+  
+  db.test_collection.insert({
+  "array": [
+    1,
+    2,
+    3
+  ],
+  "boolean": true,
+  "null": null,
+  "number": 123,
+  "object": {
+    "a": "b",
+    "c": "d",
+    "e": "f"
+  },
+  "string": "Hello World"
+})
+
+
+db.test_collection.insert(
+{
+  "key1":"value1",
+  "key2":[{"one":"1","two":2}],
+  "Devices":["iphone","android","windows","Macintosh"]
+})
+----update-------
+db.movie.update({"likes":4},{$set:{"likes":6}},{multi:true})
+
+db.movie.find({},{_id:0}) -- _id will not be present in output documents
+
+db.movie.distinct("moviename")  -- returns all distinct values for the moviename key from the movie collection.
